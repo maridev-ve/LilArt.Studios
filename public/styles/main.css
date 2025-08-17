@@ -155,6 +155,7 @@ ul li {
 #theme-toggle {
   font-size: 2rem;
   padding: 0 1rem 0 1rem;
+  color: #501d06;
 }
 
 /* Hero section - mobile base */
@@ -330,6 +331,21 @@ body.dark-mode .carousel-control-next-icon {
     display: flex;
   }
 
+  .image-hero {
+  width: 65%;
+}
+h2{
+  font-size: 30px;
+}
+p{
+  font-size: 16px;
+}
+
+.logo-light-bottom,
+.logo-dark-bottom {
+  max-width: 7rem;
+  height: auto;
+}
 }
 
 /* Footer - mobile base */
@@ -366,4 +382,66 @@ body.dark-mode .carousel-control-next-icon {
   background-color: rgba(255, 255, 255, 0.25);
   /* when open */
   color: var(--text-color);
+}
+
+/* Custom button styles - overriding Bootstrap defaults */
+
+/* Light mode button styles */
+body.light-mode .btn-primary {
+  background-color: #501d06;
+  border-color: #501d06;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+body.light-mode .btn-primary:hover,
+body.light-mode .btn-primary:focus,
+body.light-mode .btn-primary:active {
+  background-color: #B8956D;
+  border-color: #B8956D;
+  color: #501d06;
+}
+
+body.light-mode .btn-outline-secondary {
+  background-color: transparent;
+  border-color: #D4C4A8;
+  color: #D4C4A8;
+}
+
+body.light-mode .btn-outline-secondary:hover,
+body.light-mode .btn-outline-secondary:focus,
+body.light-mode .btn-outline-secondary:active {
+  background-color: #D4C4A8;
+  border-color: #D4C4A8;
+  color: #501d06;
+}
+
+/* Dark mode button styles */
+body.dark-mode .btn-primary {
+  background-color: #3D3028;
+  border-color: #3D3028;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-primary:focus,
+body.dark-mode .btn-primary:active {
+  background-color: #5A4A3A;
+  border-color: #5A4A3A;
+  color: #ffffff;
+}
+
+body.dark-mode .btn-outline-secondary {
+  background-color: transparent;
+  border-color: #3D3028;
+  color: #3D3028;
+}
+
+body.dark-mode .btn-outline-secondary:hover,
+body.dark-mode .btn-outline-secondary:focus,
+body.dark-mode .btn-outline-secondary:active {
+  background-color: #3D3028;
+  border-color: #3D3028;
+  color: #ffffff;
 }

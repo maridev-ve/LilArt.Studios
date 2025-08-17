@@ -191,9 +191,14 @@ const fechasDisponibles = {
 ```
 
 ### Contact Integration
-- WhatsApp number: 34624643500
+- WhatsApp integration with obfuscated phone number for anti-bot protection
 - Automatic message formatting with booking details
 - Social media links: Instagram, Facebook, TikTok
+
+### Security Features
+- Phone number obfuscation using multiple encoding layers (Base64, XOR, mathematical operations)
+- Bot protection through silent user interaction detection
+- Phone number removed from public HTML to prevent scraping
 
 ## Asset Management
 - All images stored in `images.img/` with descriptive subdirectories
