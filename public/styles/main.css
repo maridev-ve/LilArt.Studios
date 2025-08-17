@@ -155,7 +155,6 @@ ul li {
 #theme-toggle {
   font-size: 2rem;
   padding: 0 1rem 0 1rem;
-  color: #501d06;
 }
 
 /* Hero section - mobile base */
@@ -268,6 +267,7 @@ body.dark-mode .carousel-control-next-icon {
   border-radius: 30px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  color: #501d06;
 }
 
 /* Form - mobile base */
@@ -397,29 +397,27 @@ body.light-mode .btn-primary {
 body.light-mode .btn-primary:hover,
 body.light-mode .btn-primary:focus,
 body.light-mode .btn-primary:active {
-  background-color: #B8956D;
   border-color: #B8956D;
   color: #501d06;
 }
 
 body.light-mode .btn-outline-secondary {
   background-color: transparent;
-  border-color: #D4C4A8;
-  color: #D4C4A8;
+  border-color: #501d06;
+  color: #501d06;
 }
 
 body.light-mode .btn-outline-secondary:hover,
 body.light-mode .btn-outline-secondary:focus,
 body.light-mode .btn-outline-secondary:active {
-  background-color: #D4C4A8;
   border-color: #D4C4A8;
   color: #501d06;
 }
 
 /* Dark mode button styles */
 body.dark-mode .btn-primary {
-  background-color: #3D3028;
-  border-color: #3D3028;
+  background-color: #501d06;
+  border-color: #501d06;
   color: #ffffff;
   font-weight: bold;
 }
@@ -427,8 +425,8 @@ body.dark-mode .btn-primary {
 body.dark-mode .btn-primary:hover,
 body.dark-mode .btn-primary:focus,
 body.dark-mode .btn-primary:active {
-  background-color: #5A4A3A;
-  border-color: #5A4A3A;
+  background-color: #501d06;
+  border-color: #501d06;
   color: #ffffff;
 }
 
@@ -441,7 +439,7 @@ body.dark-mode .btn-outline-secondary {
 body.dark-mode .btn-outline-secondary:hover,
 body.dark-mode .btn-outline-secondary:focus,
 body.dark-mode .btn-outline-secondary:active {
-  background-color: #3D3028;
-  border-color: #3D3028;
+  background-color: #501d06;
+  border-color: #501d06;
   color: #ffffff;
 }
