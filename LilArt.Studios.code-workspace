@@ -8,6 +8,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "LilArt.Studios"
+		"liveServer.settings.multiRootWorkspaceName": "LilArt.Studios",
+		"liveServer.settings.port": 5502
 	}
 }

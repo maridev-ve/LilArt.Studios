@@ -4,17 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## 🎯 Project Objective
 
-Static website for **LilArt.Studios** that:
-- Displays work (gallery/carousel) and a hero section
-- Provides clear CTAs to **Book**
+Modern static website for **Nails By Lili** that:
+- Displays work (gallery/carousel) and a hero section with video background
+- Provides clear CTAs to **Book** with smooth scrolling interactions
 - Allows **booking an appointment** by sending data via **WhatsApp** and adding event to **Google Calendar**
-- Maintains **responsive design** with Bootstrap 5
+- Maintains **responsive design** with Tailwind CSS
+- Implements **dark/light mode** theme switching with localStorage persistence
 
 **Language Note:** The **code** (CSS class names, IDs, variables, functions and internal comments) **must be in English**. The **visible content** of the page (texts, labels, placeholders) **must be in Spanish**.
 
 ## Project Overview
 
-LilArt.Studios is a static website for a manicure salon built with vanilla HTML, CSS, and JavaScript. The site features a modern design with Bootstrap 5 framework, image galleries, appointment booking, and dark/light theme functionality.
+Nails By Lili is a modern static website for a manicure salon built with vanilla HTML, CSS, and JavaScript. The site features a contemporary design with Tailwind CSS framework, video hero section, image galleries, smooth scroll interactions, appointment booking, and dynamic dark/light theme switching with localStorage persistence.
 
 ## 📦 Current State (keep functional)
 
@@ -31,7 +32,8 @@ Main files (do not break their behavior):
 Current hard rules:
 - Do not introduce **console errors**
 - Do not break existing image/video paths
-- Do not break compatibility with **Bootstrap 5.3.7** (CDN)
+- Do not break compatibility with **Tailwind CSS** (CDN)
+- Maintain CSS custom properties for dynamic theming (light/dark mode)
 
 ## 🧱 Target Architecture (hexagonal "lite")
 
@@ -60,7 +62,7 @@ Apply layer separation without unnecessarily complicating a static front-end:
     calendarGateway.js
     storageGateway.js     # (optional future)
 
-  /ui                     # DOM/Bootstrap interaction
+  /ui                     # DOM/Tailwind CSS interaction
     main.js               # entry point (ESM)
     navBar.js
     scrollButtons.js
@@ -87,7 +89,8 @@ Each PR must confirm:
 - ✅ Same visible functionality (no unexpected changes)
 - ✅ No console errors (desktop and mobile)
 - ✅ Asset paths intact or correctly updated
-- ✅ Bootstrap 5 working
+- ✅ Tailwind CSS classes working properly
+- ✅ Dark/light mode theme switching functional
 
 ## Project Structure
 
@@ -95,7 +98,8 @@ Each PR must confirm:
 - **Static HTML Site**: Single-page application with `index.html` as the main entry point
 - **Modular JavaScript**: Feature-based JS modules in `/javascript/` and `/src/ui/` directories
 - **CSS Theming**: CSS custom properties for dynamic light/dark mode switching
-- **Bootstrap Integration**: Uses Bootstrap 5 for responsive layout and components
+- **Tailwind CSS Integration**: Uses Tailwind CSS (utility-first) for responsive layout and modern styling
+- **CSS Custom Properties**: Dynamic variables for theming (--text-primary, --bg-secondary, etc.) that adapt to `.light-mode` and `.dark-mode` classes
 
 ### Key Directories
 - `public/styles/`: Main CSS file with theme variables and responsive design
@@ -108,8 +112,8 @@ The site uses a component-based approach with separate JavaScript modules:
 
 - **Theme System** (`src/ui/themeToggle.js`): Handles light/dark mode with localStorage persistence
 - **Form Handler** (`javascript/reservarCitasWhatsapp.js`): WhatsApp integration and Google Calendar links
-- **Navigation** (`javascript/navBar.js`): Bootstrap collapse menu with smooth scrolling
-- **UI Controls** (`javascript/btnGoReservar.js`): Scroll-to-section functionality
+- **Navigation** (`javascript/navBar.js`): Responsive navigation menu with smooth scrolling interactions
+- **UI Controls** (`javascript/btnGoReservar.js`): Smooth scroll-to-section functionality
 
 ## Development Commands
 
@@ -147,9 +151,10 @@ php -S localhost:8000
 - Phone number validation (digits only)
 
 ### Responsive Design
-- Mobile-first approach with Bootstrap breakpoints
+- Mobile-first approach with Tailwind breakpoints (sm, md, lg, xl)
 - Dual carousel system (desktop/mobile variants)
-- Accordion footer for mobile navigation
+- Tailwind responsive utilities (hidden, flex, grid) for adaptive layouts
+- Dark mode support with Tailwind's `dark:` prefix for all responsive elements
 
 ## 🛠️ Code Conventions
 
@@ -163,19 +168,22 @@ php -S localhost:8000
 - No inline styles if it can go in CSS
 
 ### CSS
-- Uses CSS custom properties for theming: `var(--background-color)`, `var(--text-color)`
-- Mobile-first responsive design with `@media (min-width: 768px)`
-- Bootstrap utility classes combined with custom styles
+- **Framework**: Tailwind CSS (utility-first approach) via CDN (`https://cdn.tailwindcss.com`)
+- **Theming**: CSS custom properties for dynamic light/dark mode (--text-primary, --bg-secondary, --accent-primary, etc.)
+- **Mobile-first**: Responsive design with Tailwind breakpoints (md:, lg:, xl:)
+- **Custom Styles**: Complementary custom CSS in `public/styles/main.css` for advanced styling, animations, and component-specific rules
+- **CSS Variables**: Root-level variables that adapt based on `.light-mode` and `.dark-mode` classes on body element
+- **Dark Mode**: Tailwind's `dark:` prefix for responsive dark mode styling alongside custom CSS variable support
 
 ### JavaScript
 - ES6 modules in `src/ui/` directory
 - Traditional script loading for `javascript/` files
 - Event-driven architecture with DOMContentLoaded listeners
-- No external dependencies beyond Bootstrap
+- No heavy external dependencies (only Tailwind CSS via CDN)
 
 ### HTML
 - Semantic HTML5 structure
-- Bootstrap 5 component classes
+- Tailwind CSS utility classes for styling and layout
 - Accessibility attributes (aria-labels, roles)
 
 ## Business Logic
@@ -218,20 +226,23 @@ const fechasDisponibles = {
 - Maintain basic accessibility (labels, `aria-*`, navigable focus)
 
 ## ✅ Manual Verification Checklist
-- `index.html` loads without errors (including Bootstrap CDN)
+- `index.html` loads without errors (including Tailwind CSS CDN)
+- Dark/light mode toggle works and persists in localStorage
 - Responsive menu works (open/close; scroll to sections)
 - **Book** buttons smooth scroll to form section
 - Form: phone numbers only, correct date/time selection
 - WhatsApp opens with correct data (encoded URL)
 - Google Calendar creates event (web and Android deep link if applicable)
 - Carousel and video display and don't break layout
+- All colors adapt correctly in dark/light mode
 - **Clean console** (no errors or critical warnings)
 
 ## ❌ Do Not (without explicit approval)
-- Replace Bootstrap or add large frameworks
+- Replace Tailwind CSS or add large frameworks
 - Rewrite entire structure in a single PR
 - Change image/video paths without updating references
 - Leave *console errors* or degrade perceptible performance
+- Break the CSS custom properties theming system
 
 ## 🧪 Responsibility Examples (reference)
 - `domain/validators.js`: `isValidPhone(value)`, `isValidDate(value)`, `isValidTime(value)`
@@ -244,7 +255,9 @@ const fechasDisponibles = {
 - `ui/main.js`: entry point that imports UI modules
 
 ## 📌 Implementation Notes
-- Maintain compatibility with **Bootstrap 5.3.x**
+- Maintain compatibility with **Tailwind CSS** (CDN from `https://cdn.tailwindcss.com`)
+- Preserve CSS custom properties in `:root` and `body.dark-mode` for theming
 - If paths are migrated, update `<link rel="stylesheet">` and `<script type="module">` in `index.html`
 - Keep reasonable image sizes (optimize if necessary)
 - Avoid *magic strings*: centralize repeated texts in constants when internal to code
+- Use Tailwind utility classes combined with custom CSS variables for responsive dark/light mode styling
