@@ -218,13 +218,6 @@ h6 {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.nails-talk::before {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--accent-primary);
-  opacity: 0.25;
-}
-
 body.dark-mode .glass {
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
