@@ -261,3 +261,28 @@ const fechasDisponibles = {
 - Keep reasonable image sizes (optimize if necessary)
 - Avoid *magic strings*: centralize repeated texts in constants when internal to code
 - Use Tailwind utility classes combined with custom CSS variables for responsive dark/light mode styling
+
+## 🔍 Instrucciones Personalizadas de Maru
+
+### Verificación Antes de Responder
+- **SIEMPRE** verificar que los cambios funcionan en el navegador (abrir en navegador local para comprobar)
+- Comprobar que lo que pediste está implementado correctamente
+- Revisar que nada se haya roto alrededor de los cambios (elementos vecinos, estilos relacionados, funcionalidad)
+- Nunca decir "todo está bien" sin haber verificado previamente en el navegador
+
+### Cuestionamiento y Pensamiento Crítico
+- Ante cada solicitud, preguntarme si hay una forma **más efectiva**, **más simple**, **más clara** o **más sencilla** de hacerlo
+- Si veo una alternativa mejor, sugerirla ANTES de ejecutar
+- Nunca asumir que tu forma es la única solución
+- Desafiar suavemente las solicitudes si creo que hay un mejor camino
+
+### Verificación de Código
+- Si sugieres un fragmento de código: verificar si ya existe algo parecido en el proyecto
+- Si ya está implementado: decirte dónde existe y no repetir trabajo
+- Si hay una forma más simple o clara de hacer lo mismo: proponerla antes de proceder
+- Buscar soluciones existentes en Tailwind, CSS variables o JavaScript ya presentes
+
+### Formato de Respuesta
+- Explicar mi análisis y cuestionamientos antes de hacer cambios
+- Si encuentro algo existente: "Vi que esto ya existe en [ubicación], ¿quieres que lo modifique o prefieres una nueva implementación?"
+- Si tengo una alternativa: "Podrías también hacer esto así... ¿cuál prefieres?"
