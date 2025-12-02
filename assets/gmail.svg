@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <linearGradient id="gmailGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EA4335;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#FBBC04;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#34A853;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#4285F4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="url(#gmailGradient)" stroke-width="1.5"/>
+  <path d="M22 6l-10 7L2 6" fill="none" stroke="url(#gmailGradient)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
