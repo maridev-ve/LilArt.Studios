@@ -437,34 +437,78 @@
             </h2>
             <p class="text-center text-lg mb-12 scroll-reveal">Ejemplos reales de manicura profesional</p>
 
-            <!-- Bento Grid Gallery -->
-            <div class="grid grid-cols-2 gap-4 md:gap-6">
-
-
-                <div class="gallery-card overflow-hidden scroll-reveal stagger-item lg:rounded-3xl">
+            <!-- Mobile/Tablet: Grid Gallery -->
+            <div class="lg:hidden grid grid-cols-2 gap-4 md:gap-6">
+                <div class="gallery-card overflow-hidden scroll-reveal stagger-item">
                     <img src="images.img/Gallery mami/manicura-cuadradas-proceso-nails.jpg"
-                        alt="Manicura cuadradas proceso nails" class="w-full h-64 lg:h-64 object-contain">
+                        alt="Manicura cuadradas proceso nails" class="w-full h-64 object-contain">
                 </div>
-                 <div class="gallery-card overflow-hidden scroll-reveal stagger-item lg:rounded-3xl">
+                <div class="gallery-card overflow-hidden scroll-reveal stagger-item">
                     <img src="images.img/Gallery mami/manicura-cuadradas-francesas-nails1.jpg"
-                        alt="Manicura cuadradas francesas nails" class="w-full h-64 lg:h-64 object-contain">
+                        alt="Manicura cuadradas francesas nails" class="w-full h-64 object-contain">
                 </div>
-                <div class="gallery-card overflow-hidden scroll-reveal stagger-item lg:rounded-3xl">
+                <div class="gallery-card overflow-hidden scroll-reveal stagger-item">
                     <img src="images.img/Gallery mami/manicura-extremadamente-larga-nails.jpg"
-                        alt="Manicura extremadamente larga nails" class="w-full h-64 lg:h-64 object-contain">
+                        alt="Manicura extremadamente larga nails" class="w-full h-64 object-contain">
                 </div>
-                <div class="gallery-card overflow-hidden scroll-reveal stagger-item lg:rounded-3xl">
+                <div class="gallery-card overflow-hidden scroll-reveal stagger-item">
                     <img src="images.img/Gallery mami/manicura-aesthetic-nails.jpg" alt="Manicura fancesa azul nails"
-                        class="w-full h-64 lg:h-64 object-contain">
+                        class="w-full h-64 object-contain">
                 </div>
-
-                <div class="gallery-card overflow-hidden scroll-reveal stagger-item lg:rounded-3xl">
+                <div class="gallery-card overflow-hidden scroll-reveal stagger-item">
                     <img src="images.img/Gallery mami/manicura-rojas-almendras-nails.jpg"
-                        alt="Manicura rojas almendras nails" class="w-full h-64 lg:h-64 object-contain">
+                        alt="Manicura rojas almendras nails" class="w-full h-64 object-contain">
                 </div>
-                <div class="gallery-card overflow-hidden scroll-reveal stagger-item lg:rounded-3xl">
+                <div class="gallery-card overflow-hidden scroll-reveal stagger-item">
                     <img src="images.img/Gallery mami/manicura-verde-cuadradas-nails.jpg"
-                        alt="Manicura verde cuadradas nails" class="w-full h-64 lg:h-64 object-contain">
+                        alt="Manicura verde cuadradas nails" class="w-full h-64 object-contain">
+                </div>
+            </div>
+
+            <!-- Desktop: Carousel Gallery -->
+            <div class="hidden lg:block">
+                <div class="carousel-container scroll-reveal">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images.img/Gallery mami/manicura-cuadradas-proceso-nails.jpg"
+                                alt="Manicura cuadradas proceso nails">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images.img/Gallery mami/manicura-cuadradas-francesas-nails1.jpg"
+                                alt="Manicura cuadradas francesas nails">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images.img/Gallery mami/manicura-extremadamente-larga-nails.jpg"
+                                alt="Manicura extremadamente larga nails">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images.img/Gallery mami/manicura-aesthetic-nails.jpg"
+                                alt="Manicura fancesa azul nails">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images.img/Gallery mami/manicura-rojas-almendras-nails.jpg"
+                                alt="Manicura rojas almendras nails">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images.img/Gallery mami/manicura-verde-cuadradas-nails.jpg"
+                                alt="Manicura verde cuadradas nails">
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <button class="carousel-prev" id="carousel-prev" aria-label="Foto anterior">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <button class="carousel-next" id="carousel-next" aria-label="Foto siguiente">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators" id="carousel-indicators"></div>
                 </div>
             </div>
 
@@ -671,6 +715,7 @@
     <script src="./javascript/reservarCitasWhatsapp.js"></script>
     <script src="./javascript/navBar.js"></script>
     <script src="./javascript/scrollAnimations.js"></script>
+    <script src="./javascript/carousel.js"></script>
 
     <script>
         // Mobile menu toggle
