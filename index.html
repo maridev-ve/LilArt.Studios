@@ -641,23 +641,13 @@
                             </select>
                         </div>
 
-                        <!-- Date & Time Selection -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="date" class="form-label">FECHA</label>
-                                <input type="text" id="date" name="date" placeholder="Selecciona fecha" readonly required class="form-input calendar-trigger">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="time" class="form-label">HORA</label>
-                                <select id="time" name="time" required class="form-select" disabled>
-                                    <option value="">Primero elige fecha</option>
-                                </select>
-                            </div>
+                        <!-- Date Selection Label -->
+                        <div class="form-group">
+                            <label class="form-label">SELECCIONAR FECHA</label>
                         </div>
 
-                        <!-- Calendar Widget (Hidden by default) -->
-                        <div id="calendar-widget" class="calendar-widget hidden">
+                        <!-- Calendar Widget (Always visible) -->
+                        <div id="calendar-widget" class="calendar-widget">
                             <div class="calendar-header">
                                 <button type="button" id="prev-month" class="calendar-nav" aria-label="Mes anterior">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -681,6 +671,17 @@
                                 <div>S</div>
                             </div>
                             <div id="calendar-days" class="calendar-days"></div>
+                        </div>
+
+                        <!-- Hidden Date Input for form submission -->
+                        <input type="hidden" id="date" name="date" required>
+
+                        <!-- Time Selection -->
+                        <div class="form-group">
+                            <label for="time" class="form-label">HORA</label>
+                            <select id="time" name="time" required class="form-select" disabled>
+                                <option value="">Primero elige fecha</option>
+                            </select>
                         </div>
 
                         <!-- Submit Button -->

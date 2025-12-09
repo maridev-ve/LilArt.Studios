@@ -36,10 +36,6 @@ class ReservationCalendar {
   }
 
   attachEventListeners() {
-    if (this.dateInput) {
-      this.dateInput.addEventListener('click', () => this.toggleCalendar());
-    }
-
     if (this.prevMonthBtn) {
       this.prevMonthBtn.addEventListener('click', () => this.changeMonth(-1));
     }
@@ -47,30 +43,6 @@ class ReservationCalendar {
     if (this.nextMonthBtn) {
       this.nextMonthBtn.addEventListener('click', () => this.changeMonth(1));
     }
-
-    // Close calendar when clicking outside
-    document.addEventListener('click', (e) => {
-      if (!this.calendarWidget.contains(e.target) && e.target !== this.dateInput) {
-        this.hideCalendar();
-      }
-    });
-  }
-
-  toggleCalendar() {
-    if (this.calendarWidget.classList.contains('hidden')) {
-      this.showCalendar();
-    } else {
-      this.hideCalendar();
-    }
-  }
-
-  showCalendar() {
-    this.calendarWidget.classList.remove('hidden');
-    this.renderCalendar();
-  }
-
-  hideCalendar() {
-    this.calendarWidget.classList.add('hidden');
   }
 
   changeMonth(direction) {
@@ -144,8 +116,9 @@ class ReservationCalendar {
     const [year, month, day] = dateStr.split('-');
     const displayDate = `${day}/${month}/${year}`;
 
+    // Store date in hidden input for form submission
     this.dateInput.value = displayDate;
-    this.hideCalendar();
+
     this.renderCalendar();
     this.updateTimeSlots(dateStr);
   }
