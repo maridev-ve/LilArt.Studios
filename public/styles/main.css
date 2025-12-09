@@ -490,54 +490,67 @@ body.dark-mode .hero-overlay {
 
 /* Reservation Form Styles */
 #reservar {
-  background: #f5f1ed;
+  background: transparent;
   color: #4a403a;
 }
 
 body.dark-mode #reservar {
-  background: #2b241f;
+  background: transparent;
   color: #e8e3dd;
 }
 
 .reservation-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
-  max-width: 1200px;
+  gap: 2rem;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
   .reservation-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5rem;
     align-items: start;
   }
 }
 
-.reservation-left {
+.reservation-info {
   display: flex;
   flex-direction: column;
 }
 
-.reservation-left h2 {
+.reservation-info h2 {
   font-family: var(--font-serif);
   color: #4a403a;
   font-weight: 400;
 }
 
-body.dark-mode .reservation-left h2 {
+body.dark-mode .reservation-info h2 {
   color: #e8e3dd;
 }
 
-.reservation-left p {
+.reservation-info p {
   font-family: var(--font-sans);
   color: #6b5f56;
   line-height: 1.6;
 }
 
-body.dark-mode .reservation-left p {
+body.dark-mode .reservation-info p {
   color: #c4b9af;
+}
+
+.reservation-form-wrapper {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(74, 64, 58, 0.08);
+}
+
+body.dark-mode .reservation-form-wrapper {
+  background: #3a322b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .cancellation-policy {

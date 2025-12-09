@@ -588,8 +588,8 @@
     <section id="reservar" class="py-20 md:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="reservation-container scroll-reveal">
-                <!-- Left Side: Info + Form -->
-                <div class="reservation-left">
+                <!-- Left Column: Title + Description + Policy -->
+                <div class="reservation-info">
                     <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">
                         Reserva tu Momento
                     </h2>
@@ -598,14 +598,16 @@
                     </p>
 
                     <!-- Cancellation Policy -->
-                    <div class="cancellation-policy mb-8">
+                    <div class="cancellation-policy">
                         <h3 class="text-lg font-serif font-semibold mb-3">Política de Cancelación</h3>
                         <p class="text-sm opacity-75 leading-relaxed">
                             Solicitamos respetuosamente un aviso de al menos 24 horas para cancelaciones. Las cancelaciones tardías resultarán en una tarifa del 50% del servicio programado.
                         </p>
                     </div>
+                </div>
 
-                    <!-- Form Fields -->
+                <!-- Center Column: Form -->
+                <div class="reservation-form-wrapper">
                     <form name="reserva-cita" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="reservation-form">
                         <input type="hidden" name="form-name" value="reserva-cita">
                         <p class="hidden">
