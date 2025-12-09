@@ -585,75 +585,110 @@
     </section>
 
     <!-- Reservation Form -->
-    <section id="reservar" class="py-20 md:py-32 bg-gray-50 dark:bg-gray-900">
+    <section id="reservar" class="py-20 md:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bento-card scroll-reveal">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-center mb-2">
-                    Reserva tu cita en Palma
-                </h2>
-                <p class="text-center mb-8 opacity-75">Manicurista especializada con más de 7 años de experiencia</p>
+            <div class="reservation-container scroll-reveal">
+                <!-- Left Side: Form Info -->
+                <div class="reservation-info">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">
+                        Reserva tu Momento
+                    </h2>
+                    <p class="text-base mb-8 opacity-80">
+                        Selecciona una fecha y servicio para comenzar tu viaje con nosotros. Operamos con cita previa para garantizar privacidad y tranquilidad.
+                    </p>
 
-                <form id="whatsapp-form" class="space-y-6 p-4">
-                    <div>
-                        <label for="name" class="block text-sm font-medium mb-2">Nombre completo</label>
-                        <input type="text" id="name" placeholder="Tu nombre" required>
+                    <!-- Cancellation Policy -->
+                    <div class="cancellation-policy">
+                        <h3 class="text-lg font-serif font-semibold mb-3">Política de Cancelación</h3>
+                        <p class="text-sm opacity-75 leading-relaxed">
+                            Solicitamos respetuosamente un aviso de al menos 24 horas para cancelaciones. Las cancelaciones tardías resultarán en una tarifa del 50% del servicio programado.
+                        </p>
                     </div>
+                </div>
 
-                    <div>
-                        <label for="system" class="block text-sm font-medium mb-2">Tipo de manicura</label>
-                        <select id="system" required>
-                            <option selected disabled>Elige el tipo de manicura</option>
-                            <option value="Manicura Rusa">Manicura Rusa – 20 €</option>
-                            <option value="Manicura Japonesa">Manicura Japonesa – 20 €</option>
-                            <option value="Permanente Gel">Manicura Permanente (Gel) – 20 €</option>
-                            <option value="Acrílica">Uñas Acrílicas – 20 €</option>
-                            <option value="Porcelana">Uñas de Porcelana – 20 €</option>
-                            <option value="PolyGel">Uñas PolyGel – 20 €</option>
-                            <option value="Francesa">Manicura Francesa – 20 €</option>
-                        </select>
-                    </div>
+                <!-- Right Side: Form -->
+                <div class="reservation-form-wrapper">
+                    <form name="reserva-cita" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="reservation-form">
+                        <input type="hidden" name="form-name" value="reserva-cita">
+                        <p class="hidden">
+                            <label>No llenes esto si eres humano: <input name="bot-field" /></label>
+                        </p>
 
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="day" class="block text-sm font-medium mb-2">Fecha preferida</label>
-                            <select id="day" required>
-                                <option value="">Selecciona una fecha</option>
+                        <!-- Full Name -->
+                        <div class="form-group">
+                            <label for="fullname" class="form-label">NOMBRE COMPLETO</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Jane Doe" required class="form-input">
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="form-group">
+                            <label for="phone" class="form-label">NÚMERO DE TELÉFONO</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+34 (555) 000-0000" required class="form-input">
+                        </div>
+
+                        <!-- Service Selection -->
+                        <div class="form-group">
+                            <label for="service" class="form-label">SERVICIO</label>
+                            <select id="service" name="service" required class="form-select">
+                                <option value="">Selecciona un tratamiento</option>
+                                <option value="Manicura Rusa">Manicura Rusa</option>
+                                <option value="Manicura Japonesa">Manicura Japonesa</option>
+                                <option value="Esmalte Permanente">Esmalte Permanente (Gel)</option>
+                                <option value="Uñas Acrílicas">Uñas Acrílicas</option>
+                                <option value="Uñas de Porcelana">Uñas de Porcelana</option>
+                                <option value="PolyGel">PolyGel</option>
+                                <option value="Manicura Francesa">Manicura Francesa</option>
                             </select>
                         </div>
 
-                        <div>
-                            <label for="hour" class="block text-sm font-medium mb-2">Hora preferida</label>
-                            <select id="hour" required>
-                                <option value="">Primero elige fecha</option>
-                            </select>
+                        <!-- Date & Time Selection -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date" class="form-label">FECHA</label>
+                                <input type="text" id="date" name="date" placeholder="Selecciona fecha" readonly required class="form-input calendar-trigger">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time" class="form-label">HORA</label>
+                                <select id="time" name="time" required class="form-select" disabled>
+                                    <option value="">Primero elige fecha</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div>
-                        <label for="reference" class="block text-sm font-medium mb-2">¿Cómo nos conociste?</label>
-                        <select id="reference" required>
-                            <option selected disabled>Selecciona una opción</option>
-                            <option value="Instagram">Instagram</option>
-                            <option value="Facebook">Facebook</option>
-                            <option value="Google">Búsqueda en Google</option>
-                            <option value="AppWebEl">AppWebEl</option>
-                            <option value="Recomendación">Recomendación</option>
-                        </select>
-                    </div>
+                        <!-- Calendar Widget (Hidden by default) -->
+                        <div id="calendar-widget" class="calendar-widget hidden">
+                            <div class="calendar-header">
+                                <button type="button" id="prev-month" class="calendar-nav" aria-label="Mes anterior">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                                <span id="current-month" class="calendar-month"></span>
+                                <button type="button" id="next-month" class="calendar-nav" aria-label="Mes siguiente">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="calendar-weekdays">
+                                <div>D</div>
+                                <div>L</div>
+                                <div>M</div>
+                                <div>X</div>
+                                <div>J</div>
+                                <div>V</div>
+                                <div>S</div>
+                            </div>
+                            <div id="calendar-days" class="calendar-days"></div>
+                        </div>
 
-                    <div>
-                        <label for="comment" class="block text-sm font-medium mb-2">¿Tienes algún diseño en
-                            mente?</label>
-                        <textarea id="comment" rows="3" placeholder="Cuéntame qué diseño te gustaría..."></textarea>
-                    </div>
-
-                    <div class="text-center">
-                        <button type="submit" class="btn-primary w-full md:w-auto">
-                            Confirmar reserva por WhatsApp
+                        <!-- Submit Button -->
+                        <button type="submit" class="form-submit">
+                            CONFIRMAR RESERVA
                         </button>
-                        <p class="text-sm opacity-60 mt-4">Te contactaremos por WhatsApp para confirmar</p>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -703,8 +738,8 @@
             </div>
 
             <div class="border-t pt-8 text-center text-sm opacity-60">
-                <p>&copy; 2025 Nails By Lili - Manicura profesional en Palma de Mallorca</p>
-                <p class="mt-2">Manicurista especializada | Manicura rusa | Gel | Acrílica | Palma | Mallorca</p>
+                <p>Palma de Mallorca, España</p>
+                <p class="mt-2">&copy; 2025 Nails By Lili. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
@@ -712,10 +747,10 @@
     <!-- JavaScript -->
     <script src="./javascript/themeToggle.js"></script>
     <script src="./javascript/btnGoReservar.js"></script>
-    <script src="./javascript/reservarCitasWhatsapp.js"></script>
     <script src="./javascript/navBar.js"></script>
     <script src="./javascript/scrollAnimations.js"></script>
     <script src="./javascript/carousel.js"></script>
+    <script src="./javascript/reservationCalendar.js"></script>
 
     <script>
         // Mobile menu toggle
