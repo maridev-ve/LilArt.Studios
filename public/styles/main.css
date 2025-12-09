@@ -507,7 +507,21 @@ body.dark-mode #reservar {
   margin: 0 auto;
 }
 
-@media (min-width: 1024px) {
+/* Tablet/Laptop: Info on top, Form + Calendar below in 2 columns */
+@media (min-width: 768px) and (max-width: 1279px) {
+  .reservation-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  .reservation-info {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop: 3 equal columns */
+@media (min-width: 1280px) {
   .reservation-container {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2.5rem;
