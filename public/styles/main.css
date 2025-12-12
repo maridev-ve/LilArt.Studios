@@ -54,8 +54,8 @@ body.dark-mode {
 }
 
 /* Dark Mode Gradient for Sections */
-body.dark-mode section {
-  background: var(--bg-gradient-dark) !important;
+body.dark-mode{
+  background: var(--bg-gradient-dark);
 }
 
 /* Base Styles */
@@ -205,7 +205,7 @@ font-family: var(--font-serif);
 }
 
 /* Experience Section Color */
-.elegir {
+#experiencia {
   background: var(--bg-secondary);
 }
 
@@ -492,16 +492,7 @@ body.dark-mode .hero-overlay {
   opacity: 0.8;
 }
 
-/* Reservation Form Styles */
-#reservar {
-  background: transparent;
-  color: #4a403a;
-}
 
-body.dark-mode #reservar {
-  background: transparent;
-  color: #e8e3dd;
-}
 
 .reservation-container {
   display: grid;
@@ -1487,7 +1478,7 @@ textarea:focus {
 footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
-  padding: 3rem 0;
+  padding: 1rem 0;
 }
 
 /* Accordion */
