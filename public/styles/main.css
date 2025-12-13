@@ -1243,10 +1243,10 @@ body.dark-mode .faq-banner-circle {
 
 /* Main large image (first image) */
 .faq-banner-circle:nth-child(1) {
-  width: 280px;
-  height: 280px;
-  top: 50%;
-  right: 2%;
+  width: 290px;
+  height: 293px;
+  top: 49%;
+  right: 21%;
   transform: translateY(-50%);
   z-index: 2;
 }
@@ -1255,8 +1255,8 @@ body.dark-mode .faq-banner-circle {
 .faq-banner-circle:nth-child(2) {
   width: 140px;
   height: 140px;
-  top: 35%;
-  left: 2%;
+  top: 15%;
+  left: 5%;
   z-index: 5;
   transform: translateY(-50%);
 }
@@ -1275,8 +1275,8 @@ body.dark-mode .faq-banner-circle {
 .faq-banner-circle:nth-child(4) {
   width: 140px;
   height: 140px;
-  top: 5%;
-  right: 5%;
+  top: 77%;
+  right: 35%;
   z-index: 5;
   transform: translate(20%, -20%);
 }
