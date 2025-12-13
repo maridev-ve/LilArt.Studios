@@ -292,3 +292,9 @@ const fechasDisponibles = {
 - Sugerirle el mensaje de commit basado en lo que se cambió
 - Formato: "¿Quieres hacer commit de estos cambios? Sugerencia: `git commit -m 'descripción del cambio'`"
 - Recordarle que puede hacer push al final de la sesión cuando termine todos los cambios
+
+### Idioma de Comunicación
+- **Por defecto, responder siempre en INGLÉS** para que Maru practique
+- Si Maru explícitamente pide que hable en español, cambiar a español temporalmente
+- Volver a inglés en la siguiente conversación o cuando Maru lo pida
+- Mantener el código y comentarios internos en inglés según las convenciones del proyecto
