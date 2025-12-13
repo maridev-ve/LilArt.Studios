@@ -286,3 +286,9 @@ const fechasDisponibles = {
 - Explicar mi análisis y cuestionamientos antes de hacer cambios
 - Si encuentro algo existente: "Vi que esto ya existe en [ubicación], ¿quieres que lo modifique o prefieres una nueva implementación?"
 - Si tengo una alternativa: "Podrías también hacer esto así... ¿cuál prefieres?"
+
+### Recordatorio de Git Commits
+- **SIEMPRE** después de hacer cambios en archivos, recordarle a Maru que haga commit
+- Sugerirle el mensaje de commit basado en lo que se cambió
+- Formato: "¿Quieres hacer commit de estos cambios? Sugerencia: `git commit -m 'descripción del cambio'`"
+- Recordarle que puede hacer push al final de la sesión cuando termine todos los cambios
