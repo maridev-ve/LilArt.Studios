@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const buttonIds = [
     "btn-go-reservar",
-    "btn-go-reservar2",
     "btn-go-reservar3",
   ];
 
