@@ -48,6 +48,9 @@
         }
     </script>
 
+    <!-- Flowbite CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="public/styles/main.css">
 
@@ -213,9 +216,12 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="pb-20 md:py-32 scroll-reveal">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Desktop 2-Column Layout Wrapper (Gallery + Why Choose) -->
+    <div class="lg:grid lg:grid-cols-[60fr_40fr] lg:gap-8 lg:max-w-7xl lg:mx-auto lg:px-4 lg:py-16 lg:min-h-[800px]">
+
+        <!-- Gallery Section -->
+        <section class="scroll-reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:max-w-none">
 
             <!-- Mobile/Tablet Gallery -->
             <div class="block lg:hidden">
@@ -269,124 +275,142 @@
                 </div>
             </div>
 
-            <!-- Desktop Masonry Gallery -->
+            <!-- Desktop Carousel Gallery -->
             <div class="hidden lg:block">
-                <div class="grid grid-cols-3 lg:grid-cols-7 gap-2">
+                <div id="desktop-gallery-carousel" class="relative w-full" data-carousel="slide">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-96 lg:h-[550px] overflow-hidden rounded-lg">
 
-                    <!-- Column 1 -->
-                    <div class="grid gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-aesthetic-nails.jpg"
+                        <!-- Carousel Item 1 - Active/First -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                            <img src="image/gallery-manicurista/manicura-aesthetic-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura aesthetic con diseño elegante" loading="lazy">
                         </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-cuadradas-francesas-nails.jpg"
+
+                        <!-- Carousel Item 2 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-cuadradas-francesas-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura francesa con uñas cuadradas" loading="lazy">
                         </div>
-                    </div>
 
-                    <!-- Column 2 -->
-                    <div class="grid gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-cuadrada-negras-nails1.jpg"
+                        <!-- Carousel Item 3 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-cuadrada-negras-nails1.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura negra con forma cuadrada" loading="lazy">
                         </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-extremadamente-larga-nails.jpg"
+
+                        <!-- Carousel Item 4 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-extremadamente-larga-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura con uñas extremadamente largas" loading="lazy">
                         </div>
 
-                    </div>
-
-                    <!-- Column 3 -->
-                    <div class="grid gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-blanca-almendra-nails.jpg"
+                        <!-- Carousel Item 5 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-blanca-almendra-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura blanca con forma almendra" loading="lazy">
                         </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-azulOscuro-almendra.jpg"
+
+                        <!-- Carousel Item 6 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-azulOscuro-almendra.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura azul oscuro con forma almendra" loading="lazy">
                         </div>
 
-                    </div>
-
-                    <!-- Column 4 -->
-                    <div class="grid gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-cuadradas-francesas-nails1.jpg"
+                        <!-- Carousel Item 7 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-cuadradas-francesas-nails1.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura francesa cuadrada elegante" loading="lazy">
                         </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-rojas-almendras-nails.jpg"
+
+                        <!-- Carousel Item 8 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-rojas-almendras-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura roja con forma almendra" loading="lazy">
                         </div>
-                    </div>
-                    <!-- Column 5 -->
-                    <div class="grid gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-fancesa-azul-nails.jpg"
+
+                        <!-- Carousel Item 9 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-fancesa-azul-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura francesa azul" loading="lazy">
                         </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-cuadrada-fancesa-nails.jpg"
+
+                        <!-- Carousel Item 10 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-cuadrada-fancesa-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura francesa cuadrada" loading="lazy">
                         </div>
-                    </div>
 
-                    <!-- Column 6 -->
-                    <div class="grid gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-fancesa-azul-nails.jpg"
-                                alt="Manicura francesa azul" loading="lazy">
-                        </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-cuadrada-fancesa-nails.jpg"
-                                alt="Manicura francesa cuadrada" loading="lazy">
-                        </div>
-                    </div>
-
-                    <!-- Column 7 -->
-
-                    <div class="grid gap-2">
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-frambuesas-nails.jpg"
+                        <!-- Carousel Item 11 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-frambuesas-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura color frambuesa" loading="lazy">
                         </div>
-                        <div>
-                            <img class="h-auto max-w-full rounded-lg"
-                                src="image/gallery-manicurista/manicura-verde-cuadradas-nails.jpg"
+
+                        <!-- Carousel Item 12 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="image/gallery-manicurista/manicura-verde-cuadradas-nails.jpg"
+                                class="absolute block w-full h-full object-cover object-center -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                                 alt="Manicura verde con uñas cuadradas" loading="lazy">
                         </div>
+
                     </div>
 
+                    <!-- Slider controls -->
+                    <button type="button"
+                        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-prev>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m15 19-7-7 7-7" />
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+
+                    <button type="button"
+                        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-next>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                            <svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+                                viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m9 5 7 7-7 7" />
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="py-5 md:py-10" id="experiencia">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-5xl font-serif text-center text-break mb-8 scroll-reveal">
+        <!-- Experience Section -->
+        <section class="py-5 md:py-10 lg:py-0 lg:flex lg:flex-col lg:justify-center" id="experiencia">
+        <div class="px-4 sm:px-6 lg:px-0">
+            <h2 class="text-3xl md:text-5xl lg:text-4xl font-serif text-center text-break mb-16 scroll-reveal">
                 ¿Por qué elegir Nails By Lili?
             </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-7xl mx-auto ">
+            <div class="flex flex-col gap-8">
                 <div class="bento-card text-center scroll-reveal stagger-item py-2">
                     <div class="text-6xl text-break">7+</div>
                     <div class="text-xl font-semibold text-break mb-2">Años de Experiencia</div>
@@ -400,7 +424,10 @@
                 </div>
             </div>
         </div>
-    </section>
+        </section>
+
+    </div>
+    <!-- End Desktop 2-Column Layout Wrapper -->
 
     <!-- Products Section -->
     <section class="py-20 md:py-32 ">
@@ -810,6 +837,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Flowbite JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
     <!-- JavaScript -->
     <script src="./javascript/themeToggle.js"></script>

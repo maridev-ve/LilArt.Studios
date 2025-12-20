@@ -206,10 +206,6 @@ font-family: var(--font-serif);
   animation: float 3s ease-in-out infinite;
 }
 
-/* Experience Section Color */
-#experiencia {
-  background: var(--bg-secondary);
-}
 
 .gradient-animated {
   background: linear-gradient(270deg, var(--accent-primary), var(--accent-secondary), var(--accent-light));
