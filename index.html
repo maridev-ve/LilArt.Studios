@@ -229,9 +229,9 @@
                     <!-- Hero/Featured Image -->
                     <div class="mb-6">
                         <div class="group overflow-hidden rounded-xl">
-                            <img class="w-full h-[30rem] object-cover group-hover:scale-105 transition-transform duration-500"
-                                src="image/gallery-manicurista/manicura-aesthetic-nails.jpg"
-                                alt="Manicura aesthetic - Trabajo destacado" loading="lazy">
+                            <img id="mobile-gallery-hero" class="w-full h-[30rem] object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="image/gallery-manicurista/manicura-cencilla-nails.jpg"
+                                alt="Manicura sencilla" loading="lazy">
                         </div>
                     </div>
 
@@ -239,38 +239,38 @@
                     <div class="grid grid-cols-5 gap-2 md:gap-6">
 
                         <!-- Thumbnail 1 -->
-                        <div class="group overflow-hidden rounded-lg">
-                            <img class="w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                        <div class="group overflow-hidden rounded-lg cursor-pointer">
+                            <img class="mobile-gallery-thumbnail w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
                                 src="image/gallery-manicurista/manicura-cencilla-nails.jpg" alt="Manicura sencilla"
-                                loading="lazy">
+                                data-index="0" loading="lazy">
                         </div>
 
                         <!-- Thumbnail 2 -->
-                        <div class="group overflow-hidden rounded-lg">
-                            <img class="w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                        <div class="group overflow-hidden rounded-lg cursor-pointer">
+                            <img class="mobile-gallery-thumbnail w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
                                 src="image/gallery-manicurista/manicura-cuadrada-fancesa-nails.jpg"
-                                alt="Manicura cuadrada francesa" loading="lazy">
+                                alt="Manicura cuadrada francesa" data-index="1" loading="lazy">
                         </div>
 
                         <!-- Thumbnail 3 -->
-                        <div class="group overflow-hidden rounded-lg">
-                            <img class="w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                        <div class="group overflow-hidden rounded-lg cursor-pointer">
+                            <img class="mobile-gallery-thumbnail w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
                                 src="image/gallery-manicurista/manicura-cuadradas-cortas-nails.jpg"
-                                alt="Manicura cuadradas cortas" loading="lazy">
+                                alt="Manicura cuadradas cortas" data-index="2" loading="lazy">
                         </div>
 
                         <!-- Thumbnail 4 -->
-                        <div class="group overflow-hidden rounded-lg">
-                            <img class="w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                        <div class="group overflow-hidden rounded-lg cursor-pointer">
+                            <img class="mobile-gallery-thumbnail w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
                                 src="image/gallery-manicurista/manicura-fancesa-azul-nails.jpg"
-                                alt="Manicura francesa azul" loading="lazy">
+                                alt="Manicura francesa azul" data-index="3" loading="lazy">
                         </div>
 
                         <!-- Thumbnail 5 -->
-                        <div class="group overflow-hidden rounded-lg">
-                            <img class="w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
+                        <div class="group overflow-hidden rounded-lg cursor-pointer">
+                            <img class="mobile-gallery-thumbnail w-full h-32 lg:h-40 object-cover group-hover:scale-105 transition-transform duration-500"
                                 src="image/gallery-manicurista/manicura-verde-cuadradas-nails.jpg"
-                                alt="Manicura verde cuadradas" loading="lazy">
+                                alt="Manicura verde cuadradas" data-index="4" loading="lazy">
                         </div>
 
                     </div>
@@ -856,6 +856,7 @@
     <script src="./javascript/navBar.js"></script>
     <script src="./javascript/scrollAnimations.js"></script>
     <script src="./javascript/reservationCalendar.js"></script>
+    <script src="./javascript/mobileGallerySwap.js"></script>
 
     <script>
         // Mobile menu toggle

@@ -1439,3 +1439,16 @@ footer {
   transform: translateZ(0);
   will-change: transform;
 }
+
+/* Mobile Gallery Active State */
+.mobile-gallery-thumbnail.gallery-active {
+  border: 3px solid var(--accent-primary);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 2px var(--accent-light);
+  transform: scale(1.05);
+}
+
+body.dark-mode .mobile-gallery-thumbnail.gallery-active {
+  border-color: var(--accent-secondary);
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.3);
+}
