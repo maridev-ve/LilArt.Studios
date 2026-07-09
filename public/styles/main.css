@@ -1254,22 +1254,6 @@ textarea:focus {
   box-shadow: var(--shadow-lg);
 }
 
-/* Carousel */
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1.5rem;
-}
-
-.carousel-item img {
-  border-radius: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.carousel-item img:hover {
-  transform: scale(1.05);
-}
-
 /* Social Cards */
 .social-card {
   border-radius: 1.5rem;
@@ -1305,26 +1289,6 @@ footer {
   background: var(--bg-secondary);
   border-top: 1px solid var(--border-color);
   padding: 1rem 0;
-}
-
-/* Accordion */
-.accordion-button {
-  background: transparent;
-  border: 1px solid var(--border-color);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  color: var(--text-primary);
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.accordion-button:hover {
-  background: var(--bg-accent);
-}
-
-.accordion-button:not(.collapsed) {
-  background: var(--bg-accent);
-  border-color: var(--accent-primary);
 }
 
 /* SEO Hidden */
