@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Modern static website for **Nails By Lili** that:
 - Displays work (gallery/carousel) and a hero section with video background
 - Provides clear CTAs to **Book** with smooth scrolling interactions
-- Allows **booking an appointment** by sending data via **WhatsApp** and adding event to **Google Calendar**
+- Allows **booking an appointment** through a **Netlify Forms** submission, with an interactive calendar widget for picking date/time
 - Maintains **responsive design** with Tailwind CSS
 - Implements **dark/light mode** theme switching with localStorage persistence
 
@@ -25,7 +25,7 @@ Main files (do not break their behavior):
 - `btnGoReservar.js` — buttons that smooth scroll to reservation section
 - `navBar.js` — responsive menu behavior (collapse/controlled scroll)
 - `phoneOnlyNumber.js` — sanitizes phone input to numbers only
-- `reservarCitasWhatsapp.js` — populates dates/times, builds WhatsApp and Google Calendar messages and links
+- `reservationCalendar.js` — powers the calendar widget (`#calendar-widget`), populates available dates/times, and fills the hidden `#date` input and `#time` select used by the Netlify Forms submission
 - `images.img/…` — image and video resources
 - (Optional per repo) `carousel.js` — specific carousel logic if exists
 
@@ -111,7 +111,7 @@ Each PR must confirm:
 The site uses a component-based approach with separate JavaScript modules:
 
 - **Theme System** (`src/ui/themeToggle.js`): Handles light/dark mode with localStorage persistence
-- **Form Handler** (`javascript/reservarCitasWhatsapp.js`): WhatsApp integration and Google Calendar links
+- **Form Handler**: the `index.html` reservation form (`name="reserva-cita"`) submits via **Netlify Forms** (`data-netlify="true"`); `javascript/reservationCalendar.js` drives the calendar widget that fills the hidden `#date` field and `#time` select
 - **Navigation** (`javascript/navBar.js`): Responsive navigation menu with smooth scrolling interactions
 - **UI Controls** (`javascript/btnGoReservar.js`): Smooth scroll-to-section functionality
 
@@ -145,9 +145,8 @@ php -S localhost:8000
 - Theme classes: `.light-mode` and `.dark-mode` on body element
 
 ### Form Integration
-- WhatsApp reservation system with pre-formatted messages
-- Dynamic date/time selection with hardcoded available slots
-- Google Calendar integration with automatic event creation
+- Reservation form submits via **Netlify Forms** (no custom JS submission logic)
+- Dynamic date/time selection with hardcoded available slots (`javascript/reservationCalendar.js`)
 - Phone number validation (digits only)
 
 ### Responsive Design
@@ -189,24 +188,22 @@ php -S localhost:8000
 ## Business Logic
 
 ### Appointment System
-Available dates and times are hardcoded in `reservarCitasWhatsapp.js`:
+Available dates and times are hardcoded in `javascript/reservationCalendar.js` (`this.availableDates`):
 ```javascript
-const fechasDisponibles = {
-  "2025-06-15": ["10:00", "12:00", "15:30"],
-  "2025-06-18": ["09:00", "11:30", "17:00"],
-  "2025-06-20": ["13:00", "16:00", "18:30"]
+this.availableDates = {
+  '2026-07-08': ['10:00', '12:00', '14:00', '16:00'],
+  '2026-07-10': ['09:00', '11:00', '15:00', '17:00'],
+  '2026-07-13': ['10:00', '13:00', '16:00', '18:00']
 };
 ```
 
 ### Contact Integration
-- WhatsApp integration with obfuscated phone number for anti-bot protection
-- Automatic message formatting with booking details
+- Phone number published in plain text in JSON-LD structured data (`"telephone": "+34624643500"` in `index.html`)
 - Social media links: Instagram, Facebook, TikTok
 
 ### Security Features
-- Phone number obfuscation using multiple encoding layers (Base64, XOR, mathematical operations)
-- Bot protection through silent user interaction detection
-- Phone number removed from public HTML to prevent scraping
+- Netlify Forms honeypot field (`bot-field`) for spam/bot protection
+- No client-side phone number obfuscation (number is intentionally public in structured data)
 
 ## Asset Management
 - All images stored in `images.img/` with descriptive subdirectories
@@ -214,7 +211,7 @@ const fechasDisponibles = {
 - Logo and branding assets in dedicated folders
 
 ## Maintenance Notes
-- Update available appointment dates in `reservarCitasWhatsapp.js`
+- Update available appointment dates in `javascript/reservationCalendar.js` (`this.availableDates`, lines ~5-14) — these are hardcoded and will go stale; refresh periodically
 - Social media links are hardcoded in HTML
 - No database or server-side components - all client-side functionality
 
@@ -230,9 +227,8 @@ const fechasDisponibles = {
 - Dark/light mode toggle works and persists in localStorage
 - Responsive menu works (open/close; scroll to sections)
 - **Book** buttons smooth scroll to form section
-- Form: phone numbers only, correct date/time selection
-- WhatsApp opens with correct data (encoded URL)
-- Google Calendar creates event (web and Android deep link if applicable)
+- Form: phone numbers only, correct date/time selection via calendar widget
+- Reservation form submits successfully through Netlify Forms
 - Carousel and video display and don't break layout
 - All colors adapt correctly in dark/light mode
 - **Clean console** (no errors or critical warnings)
